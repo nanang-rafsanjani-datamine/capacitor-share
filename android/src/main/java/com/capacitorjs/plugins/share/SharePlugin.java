@@ -41,9 +41,10 @@ public class SharePlugin extends Plugin {
                 }
             };
 
+        IntentFilter filter = new IntentFilter("android.intent.action.SEND");
         getActivity().registerReceiver(
             broadcastReceiver,
-            new IntentFilter(Intent.EXTRA_CHOSEN_COMPONENT),
+            filter,
             Context.RECEIVER_NOT_EXPORTED
         );
     }
